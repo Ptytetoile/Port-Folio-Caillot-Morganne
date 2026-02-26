@@ -1,0 +1,82 @@
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fond + centrage */ 
+body { background: linear-gradient(135deg, #6e4405, #9461e6);;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    }
+
+/* Bloc central */
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(156, 99, 13, 0.404);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(249, 249, 250, 0.795);
+}
+
+/* Titre */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Texte */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Bouton stylé */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #b69963;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #773c05;
+    transform: translateY(-3px);
+}
+
+/* Taille des images des projets */
+.projects img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* espace vertical entre les boutons */
+.projects li {
+    list-style: none;
+    text-align: center;
+}
+
+/* espace entre les images */
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 25px;
+    padding: 0;
+}
