@@ -1,3 +1,13 @@
+/* Variables de couleurs */
+:root {
+    --or: #b69963;
+    --or-fonce: #773c05;
+    --brun: #6e4405;
+    --violet: #9461e6;
+    --fond-container: rgba(156, 99, 13, 0.404);
+    --ombre: rgba(249, 249, 250, 0.795);
+}
+
 /* Reset simple */
 * {
     margin: 0;
@@ -5,24 +15,33 @@
     box-sizing: border-box;
 }
 
-/* Fond + centrage */ 
-body { background: linear-gradient(135deg, #6e4405, #9461e6);;
-    height: 100vh;
+/* Fond + centrage */
+body {
+    background: linear-gradient(135deg, var(--brun), var(--violet));
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    padding: 40px 20px;
     color: white;
-    }
+}
+
+/* Page d'accueil : centrage vertical parfait */
+body.accueil {
+    align-items: center;
+    padding: 0;
+}
 
 /* Bloc central */
 .container {
     text-align: center;
+    width: 100%;
     max-width: 600px;
     padding: 40px;
-    background: rgba(156, 99, 13, 0.404);
+    background: var(--fond-container);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(249, 249, 250, 0.795);
+    box-shadow: 0 0 40px var(--ombre);
 }
 
 /* Titre */
@@ -35,48 +54,93 @@ h1 {
 
 /* Texte */
 p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
     opacity: 0.9;
+    line-height: 1.6;
 }
 
 /* Bouton stylé */
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: #b69963;
+    background: var(--or);
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 30px;
     transition: 0.3s;
+    margin: 6px 4px;
 }
 
 .btn:hover {
-    background: #773c05;
+    background: var(--or-fonce);
     transform: translateY(-3px);
 }
 
-/* Taille des images des projets */
+/* Menu de navigation global */
+nav.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+nav.menu a {
+    display: inline-block;
+    padding: 7px 16px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    transition: 0.2s;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+nav.menu a:hover {
+    background: var(--or);
+    border-color: var(--or);
+}
+
+nav.menu a.actif {
+    background: var(--or);
+    border-color: var(--or);
+}
+
+/* Images des projets */
 .projects img {
     width: 100%;
     max-width: 150px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
     border-radius: 15px;
     margin-bottom: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* espace vertical entre les boutons */
+/* Items de liste */
 .projects li {
     list-style: none;
     text-align: center;
 }
 
-/* espace entre les images */
+/* Grille des projets */
 .projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 25px;
     padding: 0;
+    margin-bottom: 30px;
+}
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+    h1 { font-size: 2.2rem; }
+    .container { padding: 24px 16px; }
+    .projects { grid-template-columns: 1fr; }
 }
